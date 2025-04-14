@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// const curl = "";
+
+// const apikey = "";
+
+// const options = {
+//   headers: {
+//     apikey: apikey,
+//   },
+// };
+
+// const data = await fetch(curl, options).then((response) => response.json());
+// console.log(data);
+---
+
+<Layout>
+  <main>
+    <section class="wiggley">
+      <h1>(Dynamisk navn)</h1>
+      <img src="" alt="" />
+      <p>(Dynamisk pris)</p>
+      <article>
+        <img src="" alt="" />
+        <p>Unik og komfortabel.</p>
+        <img src="" alt="" />
+        <p>Minimal miljøpåvirkning.</p>
+        <img src="" alt="" />
+        <p>Mindre spild. Mere natur.</p>
+        <img src="" alt="" />
+        <p>Dit valg gør en forskel.</p>
+      </article>
+      <p>(Dynamisk størrelse)</p>
+      <ul></ul>
+      <button>Læg i kurv</button>
+    </section>
+
+    <!-- BANNER -->
+
+    <section>
+      <h2>Prøv vores andre styles</h2>
+      <!-- Sæt Fridas card ind -->
+    </section>
+  </main>
+</Layout>
+
+<style>
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: Pleasant-header, sans-serif;
+  }
+
+  p {
+    font-family: Pleasant-paragraph;
+  }
+
+  body {
+    background-color: rgb(243, 240, 232);
+  }
+
+  .wiggley {
+    border: 5px solid rgb(214, 124, 28);
+  }
+
+  main {
+    max-width: 90%;
+    margin: auto;
+  }
+
+  button {
+    border: none;
+    background-color: rgb(136, 190, 172);
+    font-family: Pleasant-paragraph;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+</style>
