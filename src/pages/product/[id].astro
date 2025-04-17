@@ -30,8 +30,8 @@ const { post } = Astro.props;
   <main>
     <section class="wiggley">
       <h1>{post.productname}</h1>
-      <img src={post.img1} alt="Produkt billede 1" />
-      <img src={post.img2} alt="Produkt billede 2" />
+      <img class="product_img" src="../../../public/Shirts26.3_78.jpg" alt="Produkt billede 1" />
+      <img class="product_img" src="../../../public/closeup_78.jpg" alt="Produkt billede 2" />
       <p>{post.price},00 DKK</p>
       <article>
         <div class="flex">
@@ -113,13 +113,18 @@ const { post } = Astro.props;
     border: none;
     background-color: rgb(136, 190, 172);
     font-family: Pleasant-paragraph;
-    width: 100%;
+    width: 60%;
     padding: 10px;
+    border-radius: 20px;
   }
 
   .symbol {
     height: 20px;
     padding-right: 10px;
+  }
+
+  .product_img {
+    width: 300px;
   }
 
   article {
