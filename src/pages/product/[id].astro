@@ -32,16 +32,24 @@ const { post } = Astro.props;
       <h1>{post.productname}</h1>
       <img src={post.img1} alt="Produkt billede 1" />
       <img src={post.img2} alt="Produkt billede 2" />
-      <p>{post.price}</p>
+      <p>{post.price},00 DKK</p>
       <article>
-        <!-- <img src="" alt="Symbol" /> -->
-        <p>Unik og komfortabel.</p>
-        <!-- <img src="" alt="Symbol" /> -->
-        <p>Minimal miljøpåvirkning.</p>
-        <!-- <img src="" alt="Symbol /> -->
-        <p>Mindre spild. Mere natur.</p>
-        <!-- <img src=" " alt="Symbol" /> -->
-        <p>Dit valg gør en forskel.</p>
+        <div class="flex">
+          <img class="symbol" src="../../../public/shirt.webp" alt="Symbol" />
+          <p>Unik og komfortabel.</p>
+        </div>
+        <div class="flex">
+          <img class="symbol" src="../../../public/recycled.webp" alt="Symbol" />
+          <p>Minimal miljøpåvirkning.</p>
+        </div>
+        <div class="flex">
+          <img class="symbol" src="../../../public/plant.webp" alt="Symbol" />
+          <p>Mindre spild. Mere natur.</p>
+        </div>
+        <div class="flex">
+          <img class="symbol" src="../../../public/check.webp" alt="Symbol" />
+          <p>Dit valg gør en forskel.</p>
+        </div>
       </article>
       <ul>{post.size.map((str) => <li>{str}</li>)}</ul>
       <button>Læg i kurv</button>
@@ -68,12 +76,32 @@ const { post } = Astro.props;
     font-family: Pleasant-paragraph;
   }
 
+  h1 {
+    font-size: 36px;
+    margin: 10px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  li {
+    list-style: none;
+    border: 1.5px solid black;
+    width: 100px;
+    padding: 3px;
+    text-align: center;
+    margin: 5px;
+  }
+
   body {
     background-color: rgb(243, 240, 232);
   }
 
   .wiggley {
     border: 5px solid rgb(214, 124, 28);
+    padding: 10px;
   }
 
   main {
@@ -85,9 +113,25 @@ const { post } = Astro.props;
     border: none;
     background-color: rgb(136, 190, 172);
     font-family: Pleasant-paragraph;
-    width: 90%;
-    display: flex;
-    justify-content: center;
+    width: 100%;
     padding: 10px;
+  }
+
+  .symbol {
+    height: 20px;
+    padding-right: 10px;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 250px;
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 </style>
