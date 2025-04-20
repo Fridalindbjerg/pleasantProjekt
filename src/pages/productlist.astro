@@ -17,13 +17,15 @@ const data = await fetch(curl, options).then((response) => response.json()); // 
 <Layout>
   <main>
     <Banner />
-    <h1>Alle produkter</h1>
-    {data.map((product) => <Pcard {product} />)}
+    <div>
+      <h1>Alle produkter</h1>
+      {data.map((product) => <Pcard {product} />)}
+    </div>
   </main>
 </Layout>
 
 <style>
-  main {
+  main div {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -35,5 +37,9 @@ const data = await fetch(curl, options).then((response) => response.json()); // 
     margin: 30px auto 0 20px;
     border-radius: 45px;
     display: inline-block;
+  }
+
+  img {
+    max-width: 300%;
   }
 </style>
