@@ -1,0 +1,29 @@
+---
+const { product } = Astro.props;
+---
+
+<article>
+  <img src={product.img1} alt={`picture of ${product.productname}`} />
+  <h2>{product.productname}</h2>
+  <h3>{product.price},00 dkk</h3>
+</article>
+
+<style>
+  article {
+    text-align: center;
+  }
+
+  h3 {
+    font-weight: normal;
+    margin-top: 0em;
+  }
+
+  h2 {
+    max-width: 60%;
+    margin: 0.5em auto;
+  }
+
+  img {
+    max-width: 100%;
+  }
+</style>

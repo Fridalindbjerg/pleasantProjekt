@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Pcard from "../components/Pcard_list.astro";
+
+const curl = "https://wgqakpwpodenybfzulqd.supabase.co/rest/v1/pleasant?select=*";
+const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndncWFrcHdwb2RlbnliZnp1bHFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ0Nzc5NDUsImV4cCI6MjA2MDA1Mzk0NX0.9tn-XzeWsFEhOnlITP1uv6_kteUJ4MXDjyl-ypKzzsI";
+
+const options = {
+  headers: {
+    apikey: apikey,
+  },
+};
+const data = await fetch(curl, options).then((response) => response.json()); // console.log(data); ---
+---
+
+<Layout>
+  <main>
+    <h1>Alle produkter</h1>
+    {data.map((product) => <Pcard {product} />)}
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  h1 {
+    background-color: #f9c7d0;
+    padding: 7% 7%;
+    margin: 30px auto 0 20px;
+    border-radius: 45px;
+    display: inline-block;
+  }
+</style>
