@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Pcard from "../components/Pcard_list.astro";
+import Banner from "../components/Banner.astro";
 
 const curl = "https://wgqakpwpodenybfzulqd.supabase.co/rest/v1/pleasant?select=*";
 const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndncWFrcHdwb2RlbnliZnp1bHFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ0Nzc5NDUsImV4cCI6MjA2MDA1Mzk0NX0.9tn-XzeWsFEhOnlITP1uv6_kteUJ4MXDjyl-ypKzzsI";
@@ -15,6 +16,7 @@ const data = await fetch(curl, options).then((response) => response.json()); // 
 
 <Layout>
   <main>
+    <Banner />
     <h1>Alle produkter</h1>
     {data.map((product) => <Pcard {product} />)}
   </main>
