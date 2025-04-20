@@ -1,0 +1,73 @@
+<style>
+  .postcard {
+    background-color: #ffeb80;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .postcard {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  .image {
+    width: 250px;
+    /* Kombiner rotation med en oversættelse til venstre */
+    transform: rotate(-5deg) translateX(-70px);
+  }
+
+  .text-box {
+    max-width: 500px;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .text-box {
+      text-align: left;
+    }
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: serif;
+    margin-bottom: 1.5rem;
+  }
+
+  .text {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .btn:hover {
+    background: #333;
+  }
+</style>
+
+<section class="postcard">
+  <img src="/frimærke.png" alt="Hawaii frimærke" class="image" />
+
+  <div class="text-box">
+    <h2 class="title">Pleasant stories</h2>
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque commodo porta.</p>
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque commodo porta.</p>
+    <a href="#" class="btn">Se mere</a>
+  </div>
+</section>

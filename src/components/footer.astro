@@ -1,0 +1,116 @@
+---
+// Footer.astro
+---
+
+<footer class="foot">
+  <div class="top">
+    <div class="col">
+      <h3 class="hdr">Header</h3>
+      <p class="txt">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare cursus sed nunc eget dictum Sed ornare cursus sed nunc eget dictumd nunc eget dictum Sed ornare cursus sed nunc eget dictum
+      </p>
+      <div class="icons">
+        <span>🔍</span>
+        <span>🔍</span>
+        <span>🔍</span>
+        <span>🔍</span>
+      </div>
+    </div>
+
+    <div class="col">
+      <h3 class="hdr">Header Text</h3>
+      <ul class="btns">
+        <li><a href="#">Button</a></li>
+        <li><a href="#">Button</a></li>
+        <li><a href="#">Button</a></li>
+        <li><a href="#">Button</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="btm">
+    <hr />
+    <div class="logo">Logo</div>
+  </div>
+</footer>
+
+<style>
+  .foot {
+    background: #131313;
+    color: #fff;
+    padding: 4rem 2rem;
+    margin-top: 5rem;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .top {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .col {
+    flex: 1;
+  }
+
+  .hdr {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .txt {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 400px;
+  }
+
+  .icons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    font-size: 1.25rem;
+  }
+
+  .btns {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .btns a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .btns a:hover {
+    opacity: 0.8;
+  }
+
+  .btm {
+    margin-top: 4rem;
+  }
+
+  .btm hr {
+    border: none;
+    border-top: 1px solid #666;
+    margin-bottom: 1.5rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+</style>
