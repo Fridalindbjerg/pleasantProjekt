@@ -1,0 +1,274 @@
+---
+import Layout from "../../layouts/Layout.astro";
+// import Pcard from "../../components/Pcard_list.astro";
+export async function getStaticPaths() {
+  const curl = "https://wgqakpwpodenybfzulqd.supabase.co/rest/v1/pleasant?select=*";
+
+  const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndncWFrcHdwb2RlbnliZnp1bHFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ0Nzc5NDUsImV4cCI6MjA2MDA1Mzk0NX0.9tn-XzeWsFEhOnlITP1uv6_kteUJ4MXDjyl-ypKzzsI";
+
+  const options = {
+    headers: {
+      apikey: apikey,
+    },
+  };
+
+  const response = await fetch(curl, options);
+  const data = await response.json();
+
+  return data.map((post) => {
+    return {
+      params: { id: post.id },
+      props: { post },
+    };
+  });
+}
+
+const { id } = Astro.params;
+const { post } = Astro.props;
+---
+
+<Layout>
+  <main>
+    <section class="wiggley">
+      <h1>{post.productname}</h1>
+      <img class="product_img" src="../../../public/Shirts26.3_78.jpg" alt="Produkt billede 1" />
+      <!-- <img class="product_img" src="../../../public/closeup_78.jpg" alt="Produkt billede 2" /> -->
+      <!-- <h2 class="hidden">{post.productname}</h2> -->
+      <div class="info">
+        <p class="price">{post.price},00 DKK</p>
+        <article>
+          <div class="flex">
+            <img class="symbol" src="../../../public/shirt.webp" alt="Symbol" />
+            <p>Unik og komfortabel.</p>
+          </div>
+          <div class="flex">
+            <img class="symbol" src="../../../public/recycled.webp" alt="Symbol" />
+            <p>Minimal miljøpåvirkning.</p>
+          </div>
+          <div class="flex">
+            <img class="symbol" src="../../../public/plant.webp" alt="Symbol" />
+            <p>Mindre spild. Mere natur.</p>
+          </div>
+          <div class="flex">
+            <img class="symbol" src="../../../public/check.webp" alt="Symbol" />
+            <p>Dit valg gør en forskel.</p>
+          </div>
+        </article>
+        <p class="size">Size:</p>
+        <ul>{post.size.map((str) => <li>{str}</li>)}</ul>
+        <button>Læg i kurv</button>
+      </div>
+    </section>
+
+    <!-- BANNER -->
+
+    <section>
+      <h3>Prøv vores andre styles</h3>
+      <!-- <Pcard /> -->
+    </section>
+  </main>
+
+  <style>
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: Pleasant-header, sans-serif;
+    }
+
+    h2 {
+      font-size: 1em;
+      text-align: center;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    p,
+    ul,
+    li {
+      font-family: Pleasant-paragraph;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 10px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      padding-left: 0;
+      padding-bottom: 10px;
+    }
+
+    li {
+      list-style: none;
+      border: 1.5px solid black;
+      width: 100px;
+      padding: 3px;
+      text-align: center;
+      margin: 5px;
+    }
+
+    body {
+      background-color: rgb(243, 240, 232);
+    }
+
+    .wiggley {
+      padding: 30px;
+      background-image: url("../../public/wiggley.png");
+      background-size: 92cqw 600px;
+      background-repeat: no-repeat;
+    }
+
+    main {
+      max-width: 90%;
+      margin: auto;
+    }
+
+    button {
+      border: none;
+      background-color: rgb(136, 190, 172);
+      font-family: Pleasant-paragraph;
+      width: 90%;
+      padding: 15px;
+      border-radius: 25px;
+      font-size: 1em;
+      margin-right: 5%;
+      margin-left: 5%;
+    }
+
+    .symbol {
+      height: 20px;
+      padding-right: 10px;
+    }
+
+    .product_img {
+      width: 270px;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-width: 250px;
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .product_img {
+      justify-self: center;
+    }
+
+    .size {
+      text-align: left;
+      padding-top: 20px;
+    }
+
+    .info {
+      margin-top: 50px;
+    }
+
+    @media (width >= 400px) {
+      .wiggley {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      h1,
+      .product_img,
+      h2,
+      .price {
+        grid-column: 1 / span 2;
+      }
+      article {
+        grid-column: 1/2;
+      }
+      ul,
+      .size {
+        grid-column: 1/2;
+      }
+
+      button {
+        grid-column: 1 / span 2;
+      }
+
+      .price {
+        text-align: left;
+      }
+    }
+
+    @media (width >= 550px) {
+      h1 {
+        font-size: 3em;
+        grid-row: 1;
+        z-index: 3;
+      }
+
+      .wiggley {
+        z-index: 1;
+      }
+      .product_img {
+        width: 400px;
+        grid-row: 1 / span 2;
+        z-index: 0;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+    }
+
+    @media (width >= 900px) {
+      .product_img {
+        grid-column: 1 /2;
+        width: 460px;
+      }
+
+      .price {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      article {
+        grid-column: 2 / 3;
+        grid-row: 2/ 3;
+      }
+
+      .info {
+        margin-left: 20px;
+      }
+    }
+
+    @media (width >= 1100px) {
+      .info {
+        margin-left: 100px;
+      }
+      h1 {
+        font-size: 3.6em;
+        text-align: center;
+      }
+    }
+
+    @media (width >= 1400px) {
+      .info {
+        margin-left: 200px;
+      }
+      .product_img {
+        width: 500px;
+      }
+    }
+  </style>
+</Layout>
