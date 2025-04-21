@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+// import Pcard from "../../components/Pcard_list.astro";
 export async function getStaticPaths() {
   const curl = "https://wgqakpwpodenybfzulqd.supabase.co/rest/v1/pleasant?select=*";
 
@@ -32,6 +33,7 @@ const { post } = Astro.props;
       <h1>{post.productname}</h1>
       <img class="product_img" src="../../../public/Shirts26.3_78.jpg" alt="Produkt billede 1" />
       <img class="product_img" src="../../../public/closeup_78.jpg" alt="Produkt billede 2" />
+      <h2>{post.productname}</h2>
       <p>{post.price},00 DKK</p>
       <article>
         <div class="flex">
@@ -59,84 +61,93 @@ const { post } = Astro.props;
 
     <section>
       <h2>Prøv vores andre styles</h2>
-      <!-- Sæt Fridas card ind -->
+      <!-- <Pcard /> -->
     </section>
   </main>
+
+  <style>
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: Pleasant-header, sans-serif;
+    }
+
+    h2 {
+      font-size: 1em;
+      text-align: center;
+    }
+
+    p {
+      font-family: Pleasant-paragraph;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 10px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+    }
+
+    li {
+      list-style: none;
+      border: 1.5px solid black;
+      width: 100px;
+      padding: 3px;
+      text-align: center;
+      margin: 5px;
+    }
+
+    body {
+      background-color: rgb(243, 240, 232);
+    }
+
+    .wiggley {
+      border: 5px solid rgb(214, 124, 28);
+      padding: 10px;
+    }
+
+    main {
+      max-width: 90%;
+      margin: auto;
+    }
+
+    button {
+      border: none;
+      background-color: rgb(136, 190, 172);
+      font-family: Pleasant-paragraph;
+      width: 90%;
+      padding: 15px;
+      border-radius: 25px;
+      font-size: 1em;
+      margin-right: 5%;
+      margin-left: 5%;
+    }
+
+    .symbol {
+      height: 20px;
+      padding-right: 10px;
+    }
+
+    .product_img {
+      width: 300px;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-width: 250px;
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  </style>
 </Layout>
-
-<style>
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: Pleasant-header, sans-serif;
-  }
-
-  p {
-    font-family: Pleasant-paragraph;
-  }
-
-  h1 {
-    font-size: 36px;
-    margin: 10px;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: row;
-  }
-
-  li {
-    list-style: none;
-    border: 1.5px solid black;
-    width: 100px;
-    padding: 3px;
-    text-align: center;
-    margin: 5px;
-  }
-
-  body {
-    background-color: rgb(243, 240, 232);
-  }
-
-  .wiggley {
-    border: 5px solid rgb(214, 124, 28);
-    padding: 10px;
-  }
-
-  main {
-    max-width: 90%;
-    margin: auto;
-  }
-
-  button {
-    border: none;
-    background-color: rgb(136, 190, 172);
-    font-family: Pleasant-paragraph;
-    width: 60%;
-    padding: 10px;
-    border-radius: 20px;
-  }
-
-  .symbol {
-    height: 20px;
-    padding-right: 10px;
-  }
-
-  .product_img {
-    width: 300px;
-  }
-
-  article {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    max-width: 250px;
-  }
-
-  .flex {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-</style>
