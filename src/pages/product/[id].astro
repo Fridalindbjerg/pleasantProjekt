@@ -33,7 +33,7 @@ const { post } = Astro.props;
       <h1>{post.productname}</h1>
       <img class="product_img" src="../../../public/Shirts26.3_78.jpg" alt="Produkt billede 1" />
       <!-- <img class="product_img" src="../../../public/closeup_78.jpg" alt="Produkt billede 2" /> -->
-      <h2 class="hidden">{post.productname}</h2>
+      <!-- <h2 class="hidden">{post.productname}</h2> -->
       <div class="info">
         <p class="price">{post.price},00 DKK</p>
         <article>
@@ -119,8 +119,10 @@ const { post } = Astro.props;
     }
 
     .wiggley {
-      border: 5px solid rgb(214, 124, 28);
       padding: 30px;
+      background-image: url("../../public/wiggley.png");
+      background-size: 92cqw 600px;
+      background-repeat: no-repeat;
     }
 
     main {
@@ -171,6 +173,10 @@ const { post } = Astro.props;
       padding-top: 20px;
     }
 
+    .info {
+      margin-top: 50px;
+    }
+
     @media (width >= 400px) {
       .wiggley {
         display: grid;
@@ -204,9 +210,12 @@ const { post } = Astro.props;
       h1 {
         font-size: 3em;
         grid-row: 1;
-        z-index: 1;
+        z-index: 3;
       }
 
+      .wiggley {
+        z-index: 1;
+      }
       .product_img {
         width: 400px;
         grid-row: 1 / span 2;
