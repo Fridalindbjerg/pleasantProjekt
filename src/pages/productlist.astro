@@ -16,7 +16,7 @@ const data = await fetch(curl, options).then((response) => response.json()); // 
 
 <Layout>
   <main>
-    <Banner />
+    <video src="https://fridalindbjerg.dk/plesant.mp4" autoplay loop muted playsinline></video>
     <div>
       <h1>Alle produkter</h1>
       {data.map((product) => <Pcard {product} />)}
@@ -25,23 +25,51 @@ const data = await fetch(curl, options).then((response) => response.json()); // 
 </Layout>
 
 <style>
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  main {
+  }
   main div {
+    max-width: 95%;
+    margin: auto;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5em;
   }
 
   h1 {
     background-color: #f9c7d0;
     padding: 7% 7%;
-    margin: 30px auto 0 20px;
+    margin: -70px auto 0 20px;
     border-radius: 45px;
     display: inline-block;
     display: grid;
     grid-column: 1/-1;
+    font-size: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 
   img {
     max-width: 300%;
+  }
+
+  @media (width >= 650px) {
+    h1 {
+      font-size: 3rem;
+      padding: 4% 7%;
+      margin: -70px auto 0 30px;
+    }
+  }
+  @media (width >= 950px) {
+    h1 {
+      font-size: 5rem;
+      padding: 2% 7%;
+      margin: -70px auto 0 40px;
+    }
   }
 </style>
