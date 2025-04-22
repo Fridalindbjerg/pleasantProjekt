@@ -1,6 +1,8 @@
 ---
+import "../../css/global.css";
 import Layout from "../../layouts/Layout.astro";
 import Pcard from "../../components/Pcard_list.astro";
+import ProductGallery from "../../components/productGallery.astro";
 export async function getStaticPaths() {
   const curl = "https://wgqakpwpodenybfzulqd.supabase.co/rest/v1/pleasant?select=*";
 
@@ -29,7 +31,7 @@ const { post } = Astro.props;
 
 <Layout>
   <main>
-    <section class="wiggley">
+    <section class="wiggley top">
       <h1>{post.productname}</h1>
       <img class="product_img" src={post.img1} alt="Produkt billede 1" />
       <div class="info">
@@ -62,16 +64,41 @@ const { post } = Astro.props;
 
     <section>
       <h3>Prøv vores andre styles</h3>
-      <Pcard />
+      <div class="flex1">
+        <div>
+          <img src="https://pleasant.dk/cdn/shop/files/Shirts26.3_80.jpg?v=1744121342&width=1600" alt="" />
+          <h2>Green street upcycled shirt</h2>
+          <p>699,00 dkk</p>
+        </div>
+        <div>
+          <img src="https://pleasant.dk/cdn/shop/files/shirts_20.2.25_21.jpg?v=1740408567&width=1600" alt="" />
+          <h2>Flower blooming upcycled shirt</h2>
+          <p>499,00 dkk</p>
+        </div>
+        <div>
+          <img src="https://pleasant.dk/cdn/shop/files/upcycledcaps_tall54_main.jpg?v=1733905620&width=1600" alt="" />
+          <h2>Rose couch potato upcycled cap</h2>
+          <p>399,00 dkk</p>
+        </div>
+      </div>
     </section>
   </main>
 
   <style>
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: Pleasant-header, sans-serif;
+    .top {
+      margin-top: 10%;
+    }
+
+    .flex1 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+    }
+    img {
+      max-width: 100%;
+    }
+    section div div h2 {
+      margin: 0;
     }
 
     h2 {
@@ -118,8 +145,8 @@ const { post } = Astro.props;
 
     .wiggley {
       padding: 30px;
-      background-image: url("../../public/wiggley.png");
-      background-size: 92cqw 600px;
+      background-image: url("/public/wiggley.png");
+      background-size: 100% 100%;
       background-repeat: no-repeat;
     }
 
