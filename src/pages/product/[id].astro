@@ -31,26 +31,26 @@ const { post } = Astro.props;
   <main>
     <section class="wiggley">
       <h1>{post.productname}</h1>
-      <img class="product_img" src="../../../public/Shirts26.3_78.jpg" alt="Produkt billede 1" />
+      <img class="product_img" src={post.img1} alt="Produkt billede 1" />
       <!-- <img class="product_img" src="../../../public/closeup_78.jpg" alt="Produkt billede 2" /> -->
       <!-- <h2 class="hidden">{post.productname}</h2> -->
       <div class="info">
         <p class="price">{post.price},00 DKK</p>
         <article>
           <div class="flex">
-            <img class="symbol" src="../../../public/shirt.webp" alt="Symbol" />
+            <img class="symbol" src="/public/shirt.webp" alt="Symbol" />
             <p>Unik og komfortabel.</p>
           </div>
           <div class="flex">
-            <img class="symbol" src="../../../public/recycled.webp" alt="Symbol" />
+            <img class="symbol" src="/public/recycled.webp" alt="Symbol" />
             <p>Minimal miljøpåvirkning.</p>
           </div>
           <div class="flex">
-            <img class="symbol" src="../../../public/plant.webp" alt="Symbol" />
+            <img class="symbol" src="/public/plant.webp" alt="Symbol" />
             <p>Mindre spild. Mere natur.</p>
           </div>
           <div class="flex">
-            <img class="symbol" src="../../../public/check.webp" alt="Symbol" />
+            <img class="symbol" src="/public/check.webp" alt="Symbol" />
             <p>Dit valg gør en forskel.</p>
           </div>
         </article>
