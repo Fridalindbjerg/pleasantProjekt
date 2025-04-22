@@ -1,0 +1,135 @@
+<footer class="ft">
+  <div class="ft-box">
+    <div class="ft-col">
+      <img src="/Logo-neg.svg" alt="Pleasant logo" class="ft-logo" />
+      <p class="ft-txt">Pleasant er et tøjmærke, der upcycler og laver nyt tøj af brugt tekstil. God stil. God samvittighed.</p>
+      <p class="ft-txt">webshop@pleasant.dk</p>
+      <p class="ft-txt">Svartid 1-2 hverdage</p>
+      <p class="ft-txt">CVR-nr: 42943274</p>
+    </div>
+
+    <div class="ft-col">
+      <h4 class="ft-head">Links</h4>
+      <ul class="ft-list">
+        <li><a href="#">Style guide</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Forhandlere</a></li>
+        <li><a href="#">Kontakt</a></li>
+        <li><a href="#">Returnportal</a></li>
+        <li><a href="#">Handelsbetingelser</a></li>
+        <li><a href="#">Privatlivspolitik (GDPR)</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <h4 class="ft-head">Pleasant Community</h4>
+      <form class="ft-form">
+        <input type="email" placeholder="Email" class="ft-input" />
+        <button type="submit" class="ft-btn">Tilmeld</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="ft-bottom">
+    <p class="ft-copy">Copyright © 2025, Pleasant.</p>
+  </div>
+</footer>
+
+<style>
+  .ft {
+    background: #131313;
+    color: #e5e5e5;
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+  }
+
+  .ft-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ft-col {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .ft-logo {
+    width: 160px;
+    margin-bottom: 1.5rem;
+  }
+
+  .ft-head {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+
+  .ft-txt {
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+
+  .ft-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ft-list li {
+    margin-bottom: 0.6rem;
+  }
+
+  .ft-list a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.95rem;
+  }
+
+  .ft-form {
+    display: flex;
+    border-bottom: 1px solid #999;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .ft-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 0.95rem;
+  }
+
+  .ft-btn {
+    background: none;
+    border: none;
+    color: #e5e5e5;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .ft-bottom {
+    border-top: 1px solid #444;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: left;
+  }
+
+  .ft-copy {
+    font-size: 0.9rem;
+    color: #999;
+  }
+
+  @media (max-width: 768px) {
+    .ft-box {
+      flex-direction: column;
+    }
+  }
+</style>

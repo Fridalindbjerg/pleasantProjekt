@@ -1,0 +1,89 @@
+<section class="hero">
+  <img src="/logoimg.svg" alt="Pleasant logo" class="logo" />
+
+  <div class="hero-left">
+    <div class="text">
+      <h2>Velkommen til Pleasant</h2>
+      <p>
+        Hos Pleasant skaber vi unik, bæredygtig mode gennem upcycling – god stil med god samvittighed. Vi giver gamle tekstiler nyt liv, reducerer CO2-aftrykket og sparer på vand og kemikalier. Vores
+        produkter er ikke bare tøj, de er et skridt mod en grønnere fremtid. Vælg Pleasant – fordi stil og bæredygtighed går hånd i hånd.
+      </p>
+      <button>Se mere</button>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="/heroBillede.png" alt="Mand i naturen" class="hero-img" />
+  </div>
+</section>
+<hr class="custom-hr" />
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #f8f5ed;
+    position: relative;
+    overflow: hidden;
+    padding: 0 4rem;
+  }
+
+  .logo {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    width: 900px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .hero-left {
+    flex: 1;
+    z-index: 2;
+  }
+
+  .text {
+    max-width: 400px;
+    margin-top: 300px;
+    margin-left: 20%;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .hero-right {
+    z-index: 1;
+  }
+
+  .hero-img {
+    height: 90vh;
+    object-fit: cover;
+  }
+  .custom-hr {
+    border: none;
+    height: 8rem;
+    background-color: #ffeb80;
+
+    margin: 2rem 0;
+  }
+</style>

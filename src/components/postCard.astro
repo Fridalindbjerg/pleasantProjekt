@@ -1,0 +1,75 @@
+<style>
+  .postcard {
+    background-color: #ffeb80;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .postcard {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  .image {
+    width: 250px;
+    transform: rotate(-5deg) translateX(-70px);
+  }
+
+  .text-box {
+    max-width: 500px;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .text-box {
+      text-align: left;
+    }
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: serif;
+    margin-bottom: 1.5rem;
+  }
+
+  .text {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .btn:hover {
+    background: #333;
+  }
+</style>
+
+<section class="postcard">
+  <img src="/frimærke.png" alt="Hawaii frimærke" class="image" />
+
+  <div class="text-box">
+    <h2 class="title">Pleasant Moments</h2>
+    <p class="text">
+      Vi tror på, at de små øjeblikke er dem, der gør forskellen. Et smil på gaden. En kaffe i morgensolen. En gåtur med din bedste ven. Pleasant skaber tøj, der passer til netop de øjeblikke –
+      behagelige, ægte og uforstyrrede. Vores kollektion er skabt til at følge dig gennem hverdagen og gøre dine stunder lidt mere… pleasant.
+    </p>
+    <p class="text">Med vores kollektion hylder vi øjeblikkene, der gør livet værd at leve – og det tøj, der gør dem endnu bedre. Del dit #pleasantmoment med os og bliv en del af vores univers.</p>
+    <a href="#" class="btn">Se mere</a>
+  </div>
+</section>
