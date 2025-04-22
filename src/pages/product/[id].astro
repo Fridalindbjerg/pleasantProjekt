@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-// import Pcard from "../../components/Pcard_list.astro";
+import Pcard from "../../components/Pcard_list.astro";
 export async function getStaticPaths() {
   const curl = "https://wgqakpwpodenybfzulqd.supabase.co/rest/v1/pleasant?select=*";
 
@@ -32,8 +32,6 @@ const { post } = Astro.props;
     <section class="wiggley">
       <h1>{post.productname}</h1>
       <img class="product_img" src={post.img1} alt="Produkt billede 1" />
-      <!-- <img class="product_img" src="../../../public/closeup_78.jpg" alt="Produkt billede 2" /> -->
-      <!-- <h2 class="hidden">{post.productname}</h2> -->
       <div class="info">
         <p class="price">{post.price},00 DKK</p>
         <article>
@@ -64,7 +62,7 @@ const { post } = Astro.props;
 
     <section>
       <h3>Prøv vores andre styles</h3>
-      <!-- <Pcard /> -->
+      <Pcard />
     </section>
   </main>
 
