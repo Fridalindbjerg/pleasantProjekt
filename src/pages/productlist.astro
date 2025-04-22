@@ -1,0 +1,99 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Pcard from "../components/Pcard_list.astro";
+import Banner from "../components/Banner.astro";
+
+const curl = "https://wgqakpwpodenybfzulqd.supabase.co/rest/v1/pleasant?select=*";
+const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndncWFrcHdwb2RlbnliZnp1bHFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ0Nzc5NDUsImV4cCI6MjA2MDA1Mzk0NX0.9tn-XzeWsFEhOnlITP1uv6_kteUJ4MXDjyl-ypKzzsI";
+
+const options = {
+  headers: {
+    apikey: apikey,
+  },
+};
+const data = await fetch(curl, options).then((response) => response.json()); // console.log(data); ---
+---
+
+<Layout>
+  <main>
+    <video src="https://fridalindbjerg.dk/plesant.mp4" autoplay loop muted playsinline></video>
+
+    <div>
+      <h1>Alle produkter</h1>
+      {data.map((product) => <Pcard {product} />)}
+      <div class="video-container">
+        <video src="https://fridalindbjerg.dk/pleasantshirts1.mp4" autoplay loop muted playsinline class="vid"></video>
+        <img src="/public/scribble1.png" alt="Overlay Image" class="overlay-image" />
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .vid {
+    grid-column: 2;
+    grid-row: auto;
+  }
+
+  .video-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .overlay-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Sørger for, at billedet ikke forhindrer interaktion med videoen */
+    width: 50%; /* Juster størrelsen på billedet */
+  }
+
+  main {
+  }
+  main div {
+    max-width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+  }
+
+  h1 {
+    background-color: #f9c7d0;
+    padding: 7% 7%;
+    margin: -70px auto 0 20px;
+    border-radius: 45px;
+    display: inline-block;
+    display: grid;
+    grid-column: 1/-1;
+    font-size: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  img {
+    max-width: 300%;
+  }
+
+  @media (width >= 650px) {
+    h1 {
+      font-size: 3rem;
+      padding: 4% 7%;
+      margin: -70px auto 0 30px;
+    }
+  }
+  @media (width >= 950px) {
+    h1 {
+      font-size: 5rem;
+      padding: 2% 7%;
+      margin: -70px auto 0 40px;
+    }
+  }
+</style>
