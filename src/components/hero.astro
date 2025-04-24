@@ -3,7 +3,7 @@
 
   <div class="hero-left">
     <div class="text">
-      <h2>Velkommen til Pleasant</h2>
+  
       <p>
         Hos Pleasant skaber vi unik, bæredygtig mode gennem upcycling – god stil med god samvittighed. Vi giver gamle tekstiler nyt liv, reducerer CO2-aftrykket og sparer på vand og kemikalier. Vores
         produkter er ikke bare tøj, de er et skridt mod en grønnere fremtid. Vælg Pleasant – fordi stil og bæredygtighed går hånd i hånd.
@@ -57,6 +57,7 @@
   }
 
   p {
+    margin-top: 15rem;
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -86,5 +87,57 @@
     background-color: #ffeb80;
 
     margin: 2rem 0;
+  }
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      height: auto;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .hero-left {
+      order: 2;
+      width: 100%;
+      margin: 0;
+    }
+
+    .hero-right {
+      order: 1;
+      width: 100%;
+      position: relative;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .logo {
+      position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 94%;
+    z-index: 3;
+    pointer-events: none;
+  }
+    }
+
+    .text {
+      margin: 2rem auto 0;
+      max-width: 100%;
+    }
+
+
+    p {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    button {
+      margin-top: 1rem;
+    }
   }
 </style>
