@@ -114,6 +114,7 @@ const socials = [
     position: relative;
     width: 100%;
     max-width: 360px;
+    margin: 0 auto;
   }
 
   .people-img {
@@ -140,6 +141,7 @@ const socials = [
 
     .left {
       align-items: center;
+      text-align: center;
     }
 
     .icon-column {
@@ -147,11 +149,24 @@ const socials = [
       justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;
+      padding-left: 0;
     }
 
-    .right .image-wrapper {
+    .right {
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-wrapper {
       max-width: 280px;
       margin: 0 auto;
+      position: relative;
+    }
+
+    .scribble-overlay {
+      top: -93px;
+      left: -138px;
+      width: 201%;
     }
   }
 </style>

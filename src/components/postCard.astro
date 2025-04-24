@@ -19,7 +19,13 @@
 
   .image {
     width: 250px;
-    transform: rotate(-5deg) translateX(-70px);
+    /* Fjernet transform fra mobil-visning */
+  }
+
+  @media (min-width: 768px) {
+    .image {
+      transform: rotate(-5deg) translateX(-70px);
+    }
   }
 
   .text-box {
